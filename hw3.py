@@ -32,7 +32,15 @@
 #              [3, 6, 9]]
 # 
 def matrix_transpose(A):
-    pass
+    column = len(A)
+    row = len(A[0])
+    Matrix = [[0 for x in range(column)] for y in range(row)] 
+    for i in range(column):
+        for j in range(len(A[i])):
+            Matrix[j][i] = A[i][j]
+    
+    return Matrix
+    
 
 
 
@@ -58,7 +66,14 @@ def matrix_transpose(A):
 #             -100
 # 
 def max_2d_array(grid):
-    pass
+    g = grid[0][0]
+    column = len(grid)
+    row = len(grid[0])
+    for i in range(column):
+        for j in range(row):
+            if (grid[i][j] > g):
+                g = grid[i][j]
+    return g
 
 
 
@@ -87,7 +102,13 @@ def max_2d_array(grid):
 #             None
 # 
 def binary_search(arr, target):
-    pass
+    x = 0
+    g = None
+    while(x < len(arr)):
+        if (arr[x] == target):
+            g = x
+        x += 1
+    return g
 
 
 
@@ -122,7 +143,15 @@ def binary_search(arr, target):
 #             None
 # 
 def search_2d_array(arr, target):
-    pass
+    h = None
+    column = len(arr)
+    row = len(arr[0])
+    for i in range(column):
+        for j in range(row):
+            if(arr[i][j] == target):
+                h = [i,j]
+            
+    return h
 
 
 
@@ -206,4 +235,11 @@ def max_sum_subrectangle(grid):
 #             0
 # 
 def max_array_flatten(arr):
-    pass
+    x = 0
+    g = 0
+    while(x < len(arr)):
+        if (isinstance(arr[x], list)):
+            g += 1
+        x += 1
+    return g
+            
